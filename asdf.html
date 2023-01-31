@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="ztCJwMJJ_0D_ob3KCK-h4JIM85l05xcEy5ZaJNzvBlA">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta charset="UTF-8">
+
+    <title>Taire</title>
+    <link rel="icon" type="image/png" href="door.png" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<h1>#learntodrawin1year</h1>
+<h3>Welcome to <a href="https://youtu.be/0NYqmhESI-Y">Marc Brunet's challenge of learning to draw in 1 year!</a></h3>
+<p>I decided to take part, see where this will lead and try to learn as much as possible.<br>
+    Each month comes with a new challenge, pushing your limits and strengthening your skills.</p>
+<p>With this website, I will try to track my own progress. There will be some </p>
+
+<h2>How many gestures you will draw</h2>
+<div>
+    <canvas id="Gestures"></canvas>
+</div>
+<div>
+    <canvas id="Overall"></canvas>
+</div>
+<div>
+    <canvas id="Topics"></canvas>
+</div>
+
+<h2>Challenges each month</h2>
+<div class="timeline">
+    <div class="outer">
+      <div class="card">
+        <div class="info">
+          <h3 class="title">January</h3>
+          <ul>
+            <li>30+ Gesture Drawings in 2-5 minutes</li>
+            <li>Perspective Basics</li>
+            <li>Studies of art you like</li>
+            <li>Shape Studies in Black and White</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">February</h3>
+          <ul>
+            <li>80+ Gesture Drawings in 2 minutes</li>
+            <li>Anatomy: Draw the head and face</li>
+            <li>1 scene in one-point perspective</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">March</h3>
+          <ul>
+            <li>30+ Gesture Drawings in 5 minutes</li>
+            <li>Simple body construction (mannequins)</li>
+            <li>1 scene in two-point perspective</li>
+            <li>portrait studies from reference</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">April</h3>
+          <ul>
+            <li>10+ Gesture Drawings in 10 minutes</li>
+            <li>Anatomy: Bones + muscle structure, upper body</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">May</h3>
+          <ul>
+            <li>60+ Gesture Drawings in 2 minutes</li>
+            <li>Anatomy: Lower body</li>
+            <li>Draw feet</li>
+            <li>Research color theory + harmonies</li>
+            <li>Environment studies</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">June</h3>
+          <ul>
+            <li>5+ Figure(!) Drawings in 15-20 minutes</li>
+            <li>Character Design: Basics (exploration, lineup, turnaround, poses, expressions, ...)</li>
+            <li>Animals: Study quadrupeds (muscle + bone structure, fur, ...)</li>
+            <li>1 scene in three-point perspective</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">July</h3>
+          <ul>
+            <li>40+ Gesture Drawings in 2 minutes</li>
+            <li>Learn to shade (techniques, values, light sources, ...)</li>
+            <li>Character design studies + color</li>
+            <li>1 self portrait in color, mirror as reference</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">August</h3>
+          <ul>
+            <li>Creature Design: Animal Hybrids (like in Avatar)</li>
+            <li>Environment Design Basics (composition, line flow, ...)</li>
+            <li>Charater Design: Variants of popular outfits</li>
+            <li>1 environment painting</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">September</h3>
+          <ul>
+            <li>5+ Figure Drawings in 20 minutes, with color</li>
+            <li>Study composition and layout</li>
+            <li>Advanced anatomy: surface muscles</li>
+            <li>Practice drawing folds</li>
+            <li>1 master study of fold drawings</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">October</h3>
+          <ul>
+            <li>Take part in a challenge you like! (E.g. Inktober) </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">November</h3>
+          <ul>
+            <li>20+ Gesture Drawings in 2-10 minutes</li>
+            <li>Draw hands</li>
+            <li>Facial expressions</li>
+            <li>1 short comic: 3+ panels, 2+ characters, 1+ environment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">December</h3>
+          <ul>
+            <li>Character + Environment Project</li>
+            <li>Design 4 characters from imagination</li>
+          </ul>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+  <!--Diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        // Variables
+        const gestures = document.getElementById('Gestures');
+        const overall = document.getElementById('Overall');
+        const topics = document.getElementById('Topics');
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+       
+        // Number of gesture Drawings (update this "data" tab when things get done)
+        new Chart(gestures, {
+          type: 'bar',
+          data: {
+            labels: months,
+            datasets: [{
+              label: '# of Gestures',
+              data: [30, 80, 30, 10, 60, 5, 40, 0, 5, 0, 20],
+              borderWidth: 1,
+              borderColor: "#ddd",
+              backgroundColor: '#333',
+            },
+            {
+              label: 'Gestures done',
+              data: [11, ],
+              borderWidth: 1,
+              backgroundColor: '#fff',
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        // Overall time commitment (minimum estimate)
+        new Chart(overall, {
+          type: 'doughnut',
+          data: {
+              labels: ["Gestures", "Figures","Research","Environment"],
+              datasets: [{
+                  label: "Minimum Gestures and Figures you will draw",
+                  borderWidth: 1,
+                  borderColor: "#ddd",
+                  backgroundColor: [
+                      "#fff","#000"
+                  ],
+                  data: [270,10],
+              },
+              {
+                  label: "Time Investment",
+                  backgroundColor: [
+                      "#fff","#000"
+                  ],
+                  data: [710,200,],
+              },
+            ],
+              
+          },
+            options: {
+              legend: {
+                    display: false,
+                },
+              tooltips: {
+                    enabled: true,
+                    mode: 'index',
+                  callbacks: {
+                    label: function (tooltipItems, data) {
+                        var i, label = [], l = data.datasets.length;
+                        for (i = 0; i < l; i += 1) {
+                            label[i] = data.datasets[i].label + ': ' + data.datasets[i].data[tooltipItems.index] + '%';
+                        }
+                        return label;
+                    }
+                  }
+                }
+              }
+          });
+
+        // Which topic is prevalent in which month (environment, characters, anatomy, colors, other/mix)
+        new Chart(topics, {
+          type: 'bar',
+          data: {
+            labels: months,
+            datasets: [{
+              label: "topics through the months",
+              data: [1,2,3,4,3],
+              borderColor: "#ddd",
+              backgroundColor: '#333',
+            }
+
+            ]
+          },
+
+
+        })
+
+      </script>
+  
+  
